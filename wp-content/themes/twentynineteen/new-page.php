@@ -26,9 +26,19 @@ get_header();
                 </div></div>
                 <!-- /left contact -->
             <div class="col-lg-8 col-sm-12 text-center" style="padding-bottom: 15%">
-                <h3 class="entry-title">BALTIC PARK MOLO</h3>
+                <h3><?php the_title(); ?></h3>
                 <h2><strong>Discover </strong><span style="color: #f4793a"><i>baltic</i></span><strong> aparthotel</strong></h2>
-                <p>Kamera Baltic Park Appartments to przestronne apartamenty wyrożniające się nowoczesnymi wnętrzami i funkcjanalnością kojąe barwy nadmorskich wydm tworzą prawdziwie beztroską atmosferę gwarantujący doskonały wypoczynek w pobliżu morza ciepłej piaszczystej plaży aranżacje dopełniają przestronne tarasy stworzone do relaksu przy szumie bałtyckich mew apartamenty ustytuowane są przy tetniącej życiem promenadzie</p>
+                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    
+        
+        
+
+        
+            <?php the_content(); ?>
+        
+
+        
+    <?php endwhile; endif; ?>
                 
                 <p><small>discover appartments room</small></p>
                 <img id="arrow" src="<?php echo get_template_directory_uri() . '/img/arrow.svg' ;?>" alt="arrow bottom"/>
@@ -69,5 +79,4 @@ get_header();
         </div>
         <!-- / quasi footer -->
 
-<?php
-get_footer();
+
